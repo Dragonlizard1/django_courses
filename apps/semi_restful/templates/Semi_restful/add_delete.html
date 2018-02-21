@@ -1,0 +1,51 @@
+<html>
+<head>
+  <title>Semi_Restful</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'Semi_restful/my_style_sheet2.css' %}" charset="utf-8">
+</head>
+<body>
+ {% load static %}
+  {% if toggle == "new" %}
+  
+    <h2>Add a New User:</h2>
+  <div class = "modify">
+    <form action='/users/create' method='POST'>   
+      {% csrf_token %}
+      <p><label for="F_name">First Name:<input type="text" name="f_name" id="name"></label></p>
+      <p><label for="L_name">Last Name:<input type="text" name="l_name" id="age"></label></p>
+      <p><label for="email">Email:<input type="text" name="email" id="email"></label></p>
+      <input class = "button" type="submit" value="Create">
+    </form>
+  </div>
+    <p class = "links"><a href = "/users">Go Back</a></p>
+
+  {% elif toggle == "edit" %}  
+  <div class = "modify">
+    <h2>Edit User {{users.id}}:</h2>
+    <form action='/update/{{users.id}}' method='POST'>  
+    {% csrf_token %} 
+      <p><label for="F_name">First Name:<input type="text" name="f_name" id="name" placeholder= " {{users.first_name}} "></label></p>
+      <p><label for="L_name">Last Name:<input type="text" name="l_name" id="age" value = ' {{users.last_name}} '></label></p>
+      <p><label for="email">Email:<input type="text" name="email" id="email" value = "{{users.email}} "></label></p>
+      <input class = "button" type="submit" value="Update">
+    </form>
+      <p class = "links"> <a href = "/users">Go Back</a> | <a href = "/users/{{users.id}}">Show</a></p>
+  </div>
+  {% elif toggle == "delete" %}
+  <div class = "modify">
+    <h2>Delete a User {{users.id}}:</h2>
+    <form action='/destroy/{{users.id}}' method='POST'> 
+    {% csrf_token %}  
+      <ol>
+        <li>Full Name: {{users.first_name}} {{users.last_name}}</li>
+        <li>Email: {{users.email}}</li>
+        <li>Created at: {{users.created_at}}</li>
+      </ol>
+      <input class = "button" type="submit" value="Delete">
+    </form>
+      <p class = "links"> <a href = "/users">Go Back</a> | <a href = "/users/{{users.id}}">Show</a></p>
+  </div>
+  {% endif %}
+</body>
+</html>

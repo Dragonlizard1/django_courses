@@ -1,0 +1,114 @@
+*
+{
+	margin: 0;
+	padding:0;
+	font-family: arial;
+}
+
+body
+{
+	width: 500px;
+	margin: auto;
+	padding-top: 20px;
+}
+
+
+
+table
+{
+	width: 500px;
+	
+}
+
+th, td
+{
+	width: 125px;
+	text-align: left;
+	padding: 1px;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+th
+{
+	border: 1px solid black;
+}
+
+.modify
+{
+	text-align: right;
+	padding-bottom: 10px;
+	
+}
+
+div
+{
+	width: 500px;
+	text-align: center;
+	border: 1px solid black;
+	vertical-align: top;
+}
+
+h1
+{
+	font-size: 65px;
+	padding: 10px;
+}
+
+h2
+{
+	padding: 10px;
+	text-align: center;
+}
+
+label
+{
+	width:400px;
+	padding: 10px 10px 10px 10px;
+	margin:10px;
+	text-align: left;
+	vertical-align: center;
+}
+
+p
+{
+	margin: 10px 90px 10px 0;
+}
+
+input
+{
+	width: 200px;
+	
+	padding: 10px;
+	text-align: left;
+}
+
+li
+{
+	list-style: none;
+	text-align: left;
+}
+
+.button
+{
+	margin-right:150px;
+	margin-top: 10px;
+	text-align: center;
+
+}
+.links
+{
+	margin-left: 30px;
+	text-align: left;
+}
+
+li
+{
+	list-style: none;
+	text-align: left;
+	margin-left: 20px;
+}
+
+
+
+

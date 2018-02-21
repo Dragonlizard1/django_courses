@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Semi_Restful</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'Semi_restful/my_style_sheet3.css' %}" charset="utf-8">
+</head>
+<body>
+ {% load static %}
+  <div>
+    <h1>User {{users.id}}</h1>
+
+    <ol>
+      <li>Full Name: {{users.first_name}} {{users.last_name}}</li>
+      <li>Email: {{users.email}}</li>
+      <li>Created at: {{users.created_at}}</li>
+    </ol>
+     <p> <a href = "/users/{{users.id}}/edit">Edit</a> | <a href = "/users/{{users.id}}/destroy">Delete</a></p>
+
+</body>
+</html>

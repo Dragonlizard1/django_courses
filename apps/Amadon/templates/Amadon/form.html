@@ -1,0 +1,50 @@
+<html>
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'Amadon/my_style_sheet.css' %}" type = "text/css">
+</head>
+
+<body>
+	<h1>Amadon Store!</h1>
+	<div>
+		<ul>
+			<li class = "textpad">Item</li>
+
+			{% for product in request.session.products %}
+			<li class = "textpad">{{product.item}}</li>
+			{%  endfor %}
+
+		</ul>
+	</div><div>
+		<ul>
+			<li class = "textpad">Price</li>
+
+			{% for product in request.session.products %}
+			<li class = "textpad">{{product.price}}</li>
+			{%  endfor %}
+
+		</ul>
+	</div><div>
+		<ul>
+			<li class = "textpad">Actions</li>
+
+			{% for product in request.session.products %}
+		<form action='/process' method='post'>
+			{% csrf_token %}
+	    
+	    <li><select id = "amount" name="amount">
+			    <option value="1">1</option>
+			    <option value="2">2</option>
+			    <option value="3">3</option>
+				  </select>
+				  <input type='hidden' name='product_id' value='{{product.id1}}' />
+				  <input id="button1" type='submit' value='Buy'>
+			</li>
+		</form>
+			{%  endfor %}
+	   		
+		</ul>
+	</div>
+
+</body>
+</html>

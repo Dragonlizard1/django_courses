@@ -1,0 +1,46 @@
+<html>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'SessionWord/my_style_sheet.css' %}" type = "text/css">
+	</head>
+
+	<body>
+		<div id = "wrapper">
+			<h1>Session Word</h1>
+			
+			<div id = "leftbox">
+				
+				<form action='/process' method='post'>
+					{% csrf_token %}
+				    <p>Add a New Word</p>
+				    <input id = "input1" type='text' name='word'>
+
+				    <p>Choose Color:  </p>
+				    <p class = "colorselect"><label id = "redcolor"><input type="radio" sele name = "color1" value="red" checked> Red</label></p>
+				    <p class = "colorselect"><label id = "greencolor"><input type="radio" name = "color1" value="green"> Green</label></p>
+				    <p class = "colorselect"><label id = "bluecolor"><input type="radio" name = "color1" value="blue"> Blue</label></p>
+
+				    <p id = "checkbox1"><label> <input type="checkbox" name = "bigsize" default= "off"> Show in BIG fonts!</label></p>
+			 
+					<input id="button1" type='submit' value='Add to Session'>
+				</form>
+			</div>
+
+			<div id = "rightbox">
+				<form action='/cleaning'>
+					{% csrf_token %}
+				<input id="button2" type='submit' value='Clear Session'>
+				</form>	
+				<hr>
+			{% if "list" in request.session %}
+				{% for element in request.session.list %}
+			
+				<p style="color:{{element.color}}; font-size: {{element.size}}">{{element.word}}</p>
+				{% endfor %}
+			{% endif %}
+			
+			</div>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'Amadon/my_style_sheet2.css' %}" type = "text/css">
+	</head>
+
+	<body>
+	
+		<h2>Thank you for your business</h2>
+	
+
+		<div>
+			
+			<p>We charged your credit card for ${{request.session.total}} </p>
+			<p>You have ordered {{request.session.quantity}} items so far and spent ${{request.session.totalspent}} with Amadon.com!</p>
+			
+		</div>
+		<a href = "/amadon">Go Back</a> 
+	</body>
+</html>

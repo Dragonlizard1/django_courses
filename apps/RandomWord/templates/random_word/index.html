@@ -1,0 +1,26 @@
+<HTML>
+<head>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'time_display/main.css' %}" type = "text/css">
+
+</head>
+<body>
+	<div id = "wrapper">
+		<p>Random Word (attempt #{{request.session.attempt}})</p>
+		<div id="time1">
+	
+		{{request.session.unique}}
+	
+		</div>
+	</div>
+	<form action='/new' method='POST'>
+		{% csrf_token %}
+		<input type="submit" value="Generate" id = "button">
+	</form>
+
+	<form action='/reset' method='POST'>
+		{% csrf_token %}
+		<input type="submit" value="RESET COunter" id = "button">
+	</form>
+</body>
+</HTML>

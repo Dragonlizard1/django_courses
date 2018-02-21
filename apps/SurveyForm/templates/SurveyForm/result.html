@@ -1,0 +1,26 @@
+<html>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'SurveyForm/my_style_sheet2.css' %}" type = "text/css">
+	</head>
+
+	<body>
+		<header>
+				<h1>Dojo Survey</h1>
+		</header>
+
+		<div>
+			<h2>Submitted Info</h2>
+			<p>Name:</p><p>  {{request.session.name1}} </p>
+			<p>Dojo Location:</p><p>  {{request.session.location1}} </p>
+			<p>Favorite Language:</p><p>  {{request.session.language1}} </p>
+			<p>Comment:</p><p>  {{request.session.comment1}} </p>
+
+			<form action='/'>
+				{% csrf_token %}
+			<input id="button2" type='submit' value='Go Back'>
+			</form>	
+			
+		</div>
+	</body>
+</html>
