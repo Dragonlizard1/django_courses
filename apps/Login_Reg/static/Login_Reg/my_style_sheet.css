@@ -1,0 +1,65 @@
+*
+{
+	margin: 0;
+	padding:0;
+	font-family: arial;
+}
+
+body
+{
+	width: 800px;
+	margin: auto;
+	padding-top: 20px;
+}
+
+div
+{
+	width: 350px;
+	text-align: center;
+	border: 1px solid black;
+	vertical-align: top;
+	display: inline-block;
+}
+
+
+
+h2
+{
+	padding: 10px;
+}
+label
+{
+	width:400px;
+	padding: 10px 10px 10px 10px;
+	margin:10px;
+	text-align: left;
+	vertical-align: center;
+}
+p
+{
+	width:330px;
+	margin:10px;
+	text-align:right;
+}
+input
+{
+	width: 200px;
+	
+	padding: 10px;
+	text-align: left;
+}
+
+.button
+{
+	text-align: center;
+}
+
+#error1
+{
+	width: 600px;
+	color: red;
+	text-align: left;
+}
+
+
+

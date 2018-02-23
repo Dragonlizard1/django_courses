@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Login_Reg</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'Login_Reg/my_style_sheet.css' %}" charset="utf-8">
+</head>
+<body>
+  {% if messages %}
+  {% for message in messages %}
+ 
+     <p id = "error1">{{message}}</p>
+
+  {% endfor %}
+  {% endif %}
+
+
+  <div class = "modify">
+    <h2>Registration:</h2>
+    <form action='/register' method='POST'>   
+      {% csrf_token %}
+      <p><label for="f_name">First Name: <input type="text" name="f_name" id="name"></label></p>
+      <p><label for="l_name">Last Name: <input type="text" name="l_name" id="l_name"></label></p>
+      <p><label for="email">Email: <input type="text" name="email" id="email"></label></p>
+      <p><label for="password">Password: <input type="text" name="password" id="password"></label></p>
+      <p><label for="c_password">Confirm pw: <input type="text" name="c_password" id="c_password"></label></p>
+      <input class = "button" type="submit" value="Register">
+    </form>
+  </div>
+
+  <div class = "modify">
+    <h2>Login:</h2>
+    <form action='/login' method='POST'>   
+      {% csrf_token %}
+
+      <p><label for="email">Email:<input type="text" name="email" id="email"></label></p>
+      <p><label for="password">Password:<input type="text" name="password" id="password"></label></p>
+      <input class = "button" type="submit" value="Login">
+    </form>
+  </div>
+
+</body>
+</html>

@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'apps.dojosninjas', 
     'apps.book_authors',
     'apps.like_book1',
-    'apps.semi_restful',#  blog app
+    'apps.semi_restful',
+    'apps.Login_Reg',#  blog app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
